@@ -1,102 +1,82 @@
 print('\nX O game by Codemanga\n')
-print('[1] | [2] | [3]')
+print(' 1  |  2  |  3')
 print('____|_____|____')
 print('    |     |   ')
-print('[4] | [5] | [6]')
+print(' 4  |  5  |  6')
 print('____|_____|____')
 print('    |     |   ')
-print('[7] | [8] | [9]')
+print(' 7  |  8  |  9')
 print('\nlooking at the positions,give proper inputs :) \n')
+# creating a list for appending numbers
+list_empty = []
+for i in range(1,10):
+    list_empty.append(i)
 
-# creating a 3x3 list of all zeros
-list1=[],[],[]
-list2=[],[],[]
-list3=[],[],[]
-data=[list1,list2,list3]
-
-#arrangement of output with function
 def display():
-    print(' %s | %s  | %s ')%(data[0][0],data[0][1],data[0][2])
-    print('_______|________|______')
-    print('       |        |    ')
-    print(' %s | %s  | %s ')%(data[1][0],data[1][1],data[1][2])
-    print('_______|________|______')
-    print('       |        |    ')
-    print(' %s | %s  | %s  ')%(data[2][0],data[2][1],data[2][2])
+    print(' %s  | %s   | %s ')%(list_empty[0],list_empty[1],list_empty[2])
+    print('____|_____|____')
+    print('    |     |    ')
+    print(' %s  | %s   | %s ')%(list_empty[3],list_empty[4],list_empty[5])
+    print('____|_____|____')
+    print('    |     |    ')
+    print(' %s  | %s   | %s ')%(list_empty[6],list_empty[7],list_empty[8])
 
-#display()
-
-
-#getting user input and machine digit randomization
-import random
-import sys
-options = ['x','o']
-l1 = [1,2,3,4,5,6,7,8,9]
-l2 = [data[0][0],data[0][1],data[0][2],data[1][0],data[1][1],data[1][2],data[2][0],data[2][1],data[2][2]]
-
-for a in range(5):
-#machine random position and input
-    #m_p1 = random.randrange(0,9)
-    #m_p2 = random.randrange(0,9)
-    
-    user_position = input('Enter position : ')
-    user_option = raw_input('Enter x or o :')
-    if user_option == 'x':
-        m_option = 'o'
+win=0
+#print list_empty
+user_input = raw_input('Enter x or o :')
+while win == 0:
+    import random
+    user_pos = input('ENTER POSITION : ')
+    if type(list_empty[user_pos-1]) == str:
+        print "\nInput given already has value stored,so invalid\n \nKindly re-execute the program\n"
     else:
-        m_option = 'x'
-    
-    #cases
-    if user_position != None:
-        l2[user_position-1].append(user_option)
-        
-        #data[2][2].append(user_option)
-        m_p1 = random.randrange(0,9)
-        #m_p2 = random.randrange(0,9)
-        if len(l2[m_p1]) == 0:
-            l2[m_p1].append(m_option)
+        list_empty.pop(user_pos -1)
+        list_empty.insert(user_pos - 1,user_input)
+    if user_input =='x':
+        #print ('user_pos',+user_pos)
+        #print ('machine_pos',+machine_pos)
+        machine_input = 'o'
+    else:
+        machine_input='x'
+    #creating function for machine ,so to save 4 lines
+    def machine(machine_input, machine_pos):
+        list_empty.pop(machine_pos - 1)
+        list_empty.insert(machine_pos - 1, machine_input)
+    # inserting machine input and position
+    machine_pos = random.randrange(1, 10)
+    if type(list_empty[machine_pos - 1]) == str:
+        machine_pos = random.randrange(1, 10)
+        if type(list_empty[machine_pos - 1]) == str:
+            machine_pos = random.randrange(1, 10)
         else:
-            m_p1 = random.randrange(0,9)
-            #m_p2 = random.randrange(0,3)
-            if len(l2[m_p1]) == 0:
-                l2[m_p1].append(m_option)
+            machine(machine_input, machine_pos)
+    else:
+        machine(machine_input, machine_pos)
+    #checking status whether player won or not
+    if list_empty[0:3] == [user_input, user_input, user_input]:
+        win = 1
+    elif list_empty[3:6] == [user_input, user_input, user_input]:
+        win = 1
+    elif list_empty[6:9] == [user_input, user_input, user_input]:
+        win = 1
+    elif [list_empty[0], list_empty[3], list_empty[6]] == [user_input, user_input, user_input]:
+        win = 1
+    elif [list_empty[1], list_empty[4], list_empty[7]] == [user_input, user_input, user_input]:
+        win = 1
+    elif [list_empty[2], list_empty[5], list_empty[8]] == [user_input, user_input, user_input]:
+        win = 1
+    elif [list_empty[0], list_empty[4], list_empty[8]] == [user_input, user_input, user_input]:
+        win = 1
+    elif [list_empty[2], list_empty[4], list_empty[6]] == [user_input, user_input, user_input]:
+        win = 1
+    else:
+        win = 0
 
-
+    if win == 1:
+        print("\n*****  PLAYER WINS  *****\n")
+    elif win == 0:
+        print("\n*****  DRAW for now  *****\n")
+    if (win == 1) == False and (win == 0) == False:
+        print("\n*****  MACHINE WINS  *****\n")
+    #displaying the elements after inserting 'x' or 'o'
     display()
-    win=3
-    def status(user_option):
-        
-        if [l2[0],l2[1],l2[2]] == [user_option,user_option,user_option]:
-            win=1
-        elif [l2[3],l2[4],l2[5]] == [user_option,user_option,user_option]:
-            win=1
-        elif [l2[6],l2[7],l2[8]] == [user_option,user_option,user_option]:
-            win=1
-        elif [l2[0],l2[3],l2[6]] == [user_option,user_option,user_option]:
-            win=1
-        elif [l2[1],l2[4],l2[7]] == [user_option,user_option,user_option]:
-            win=1
-        elif [l2[2],l2[5],l2[8]] == [user_option,user_option,user_option]:
-            win=1
-        elif [l2[0],l2[4],l2[8]] == [user_option,user_option,user_option]:
-            win=1
-        elif [l2[2],l2[4],l2[6]] == [user_option,user_option,user_option]:
-            win=1
-        else:
-            win=0
-        
-
-        if win==1:
-            print("\n*****  PLAYER WINS  *****\n")
-        elif win==0:
-            print("\n*****  DRAW for now  *****\n")
-        if (win==1)==False and (win==0)==False:
-            print("\n*****  MACHINE WINS  *****\n")
-        
-        if win==1:
-            sys.exit()
-        
-    
-    
-    if a==3:
-        status([user_option])
