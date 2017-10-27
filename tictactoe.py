@@ -71,12 +71,11 @@ while win == 0:
         win = 1
     else:
         win = 0
-
-    if win == 1:
-        print("\n*****  PLAYER WINS  *****\n")
-    elif win == 0:
-        print("\n*****  DRAW for now  *****\n")
-    if (win == 1) == False and (win == 0) == False:
-        print("\n*****  MACHINE WINS  *****\n")
     #displaying the elements after inserting 'x' or 'o'
     display()
+if win == 1:
+    print("\n*****  PLAYER WINS  *****\n")
+elif win == 0:
+    print("\n*****  DRAW for now  *****\n")
+if (win == 1) == False and (win == 0) == False:
+    print("\n*****  MACHINE WINS  *****\n")
