@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 print('\nX O game by Codemanga\n')
 print(' 1  |  2  |  3')
 print('____|_____|____')
