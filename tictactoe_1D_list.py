@@ -1,17 +1,9 @@
 #!/usr/bin/env python
-print('\nX O game by Codemanga\n')
-print(' 1  |  2  |  3')
-print('____|_____|____')
-print('    |     |   ')
-print(' 4  |  5  |  6')
-print('____|_____|____')
-print('    |     |   ')
-print(' 7  |  8  |  9')
-print('\nlooking at the positions,give proper inputs :) \n')
 # creating a list for appending numbers
 list_empty = []
 for i in range(1,10):
     list_empty.append(i)
+print('\nX O game by Codemanga\n')
 
 def display():
     print(' %s  | %s   | %s ')%(list_empty[0],list_empty[1],list_empty[2])
@@ -21,7 +13,7 @@ def display():
     print('____|_____|____')
     print('    |     |    ')
     print(' %s  | %s   | %s ')%(list_empty[6],list_empty[7],list_empty[8])
-
+display()
 win=0
 #print list_empty
 user_input = raw_input('Enter x or o :')
