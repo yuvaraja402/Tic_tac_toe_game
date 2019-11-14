@@ -7,3 +7,10 @@ Tic-tac-toe (also known as noughts and crosses or Xs and Os) is a paper-and-penc
 ### Python Script :
 
 URL : https://github.com/yuvaraja402/Tic_tac_toe_game_with-random_AI/blob/master/tictactoe_1D_list.py
+
+
+<iframe src="https://trinket.io/embed/python3/8fff66cdba" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+https://trinket.io/python3/8fff66cdba?runOption=run&showInstructions=true
+
+
