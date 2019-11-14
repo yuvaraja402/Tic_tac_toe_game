@@ -14,7 +14,7 @@ URL : https://github.com/yuvaraja402/Tic_tac_toe_game_with-random_AI/blob/master
 <figure>
   <figcaption>Your code title</figcaption>
   <pre>
-    <code>
+    <code language='python'>
         i1 = [-1,-2,0,1,2,3,9]
         i2 = [-1,-3]
         i3 = [1,2,3]
