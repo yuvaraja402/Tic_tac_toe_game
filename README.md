@@ -15,6 +15,7 @@ URL : https://github.com/yuvaraja402/Tic_tac_toe_game_with-random_AI/blob/master
   <figcaption>Your code title</figcaption>
   <pre>
     <code language-"python">
+    
         i1 = [-1,-2,0,1,2,3,9]
         i2 = [-1,-3]
         i3 = [1,2,3]
@@ -36,6 +37,7 @@ URL : https://github.com/yuvaraja402/Tic_tac_toe_game_with-random_AI/blob/master
         answer = positive(i2)
         print('\n',i1)
         print('\n',answer)
+        
     </code>
   </pre>
 </figure>
