@@ -14,3 +14,11 @@ URL : https://github.com/yuvaraja402/Tic_tac_toe_game_with-random_AI/blob/master
 https://trinket.io/python3/8fff66cdba?runOption=run&showInstructions=true
 
 
+<figure>
+  <figcaption>Your code title</figcaption>
+  <pre>
+    <code>
+      print('hello')
+    </code>
+  </pre>
+</figure>
