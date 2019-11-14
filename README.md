@@ -18,28 +18,24 @@ URL : https://github.com/yuvaraja402/Tic_tac_toe_game_with-random_AI/blob/master
         i1 = [-1,-2,0,1,2,3,9]
         i2 = [-1,-3]
         i3 = [1,2,3]
-
-      def positive(input):
-          #getting +ve and -ve numbers
-          #pos = [i for i in input if i > 0]
-          #neg = [i for i in input if i < 0]
-
-          ans = []
-
-          for i in range(1,max(input)+1):
-              if i in input:
-                  continue
-              else:
-                  ans.append(i)
-          if len(ans) > 0:
-              ans = min(ans)
-          if len(ans) == 0:
-              ans.append(1)
-
-          return ans
-      answer = positive(i2)
-      print('\n',i1)
-      print('\n',answer)
+        def positive(input):
+            #getting +ve and -ve numbers
+            #pos = [i for i in input if i > 0]
+            #neg = [i for i in input if i < 0]
+            ans = []
+            for i in range(1,max(input)+1):
+                if i in input:
+                    continue
+                else:
+                    ans.append(i)
+            if len(ans) > 0:
+                ans = min(ans)
+            if len(ans) == 0:
+                ans.append(1)
+            return ans
+        answer = positive(i2)
+        print('\n',i1)
+        print('\n',answer)
     </code>
   </pre>
 </figure>
